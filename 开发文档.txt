@@ -1,0 +1,75 @@
+C/C++ based on the funcode platform to develop a secret room escape game
+
+//tools
+extern void ShowSprite(const char* szName , const float fMouseX, const float fMouseY);
+extern void ClickChangeScene(const char *szName1,const char *szName2,const float fMouseX, const float fMouseY);
+extern void ShowItems(const int mark,const char *szName);
+extern void BiggerSprite(int pass,const char *szName,const float fMouseX, const float fMouseY);
+
+
+//场景
+关卡选择界面：checkpoint.t2d
+游戏主界面：GameMainInterface.t2d   :-1.877,0.374,113.754,75.748
+游戏背景：GamePlot.t2d
+游戏玩法：GamePlay.t2d
+关卡一第一面：CheckpointFirst_one.t2d
+关卡一第二面：CheckpointFirst_two.t2d  袋子
+
+关卡二第一面:CheckpointSecond_one.t2d
+
+关卡三第一面：CheckpointThird_one.t2d
+
+
+//精灵
+游戏开头音乐：openingSound
+关卡一音乐：checkpointFirstSound.wav
+关卡二音乐：checkpointSecondSound.wav
+关卡三音乐：checkpointThirdSound.wav
+开始游戏按钮：StartGameButton
+继续游戏按钮：ContinueGameButton
+游戏背景按钮：GamePlotButton
+游戏玩法按钮：GamePlayButton
+关卡返回按钮：checkpointBackButton  ：-43.215,32.117,6.431,5.765
+物品框: itemBox      ：0.000,13.721,150.000,72.559
+第一关图：checkpointFirst_one   :-0.000,-8.606,150.000,82.788   世界:150*100,800*600
+文本对话框：textBoxOne,textBoxTwo,textBoxThree,textBoxFour  ：40.582，22.600，68.836，18.716
+提示圆圈：promptCircle，promptCircleCar,promptCircleDrill，promptCircleZuanJian，promptCircleBox
+
+提示：：secondPrompt
+点击提示：clickareaPrompt
+
+关卡一：：checkpointFirst  ：-36.097,-19.678,12.643,12.643
+车内箱子：boxInCar
+钻头：Drill
+钻尖：ZuanJian
+
+
+
+关卡二：：checkpointSecond
+关卡三：：checkpointThird
+
+鼠标点击次数：clicks=0
+场景标志：SceneState
+第一关过关标志：checkpointFirstpass
+第二关过关标志：checkpointSecondpass;
+第二关过关标志：checkpointThirdpass;
+是否有声音标志：checkpointFirstVoice，checkpointSecondVoice，checkpointThirdVoice
+
+//关于红宝石
+红宝石数量文字精灵：rubyNumber
+点击区域(黄色圆圈)：clickCircle
+
+//SceneState
+  SceneState=0; 游戏主界面
+  SceneState=1; 游戏关卡界面
+ SceneState=2;  游戏背景
+   SceneState=3; 游戏玩法
+  SceneState=4;  第一关
+  SceneState=n;  第n-3关
+   SceneState=18;  第15关
+
+//Scene0.h  主界面
+Scene01.h  游戏关卡
+Scene02.h  游戏背景
+Scene03.h  游戏玩法
+Scene1.h  第一关
